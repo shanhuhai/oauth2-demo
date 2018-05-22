@@ -52,7 +52,12 @@ if (isset($_REQUEST['code']) && $_SERVER['REQUEST_URI']) {
         'form_params'=> [
             'grant_type'=>'authorization_code',
             'code'=> $code,
-            'redirect_uri'=> REDIRECT_URI,
+            'redirect_uri'=> REDIRECT_URI,			
+			
+			//20180522
+			//fix 400 bad request
+			'client_id'=>CLIENT_ID,
+			'client_secret'=>CLIENT_SECRET,
         ]
     ]);
 
